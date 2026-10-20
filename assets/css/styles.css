@@ -405,10 +405,14 @@ main:focus { outline: none; }
 .lineup { display: flex; align-items: flex-end; justify-content: center; gap: clamp(3px, 1.2vw, 14px); font-size: clamp(4.4px, 1.32vw, 9.6px); padding-bottom: 16px; position: relative; }
 .lineup::after { content: ""; position: absolute; left: 4%; right: 4%; bottom: 8px; height: 14px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(35, 48, 28, .22), transparent 70%); z-index: -1; }
 .product__media .lineup { font-size: clamp(3.5px, 1.45cqi, 8px); gap: clamp(2px, 1.5cqi, 12px); }
-.bottle { display: block; width: auto; flex: none; filter: drop-shadow(0 8px 10px rgba(35, 48, 28, .16)); }
+.bottle { display: block; width: auto; flex: none; filter: drop-shadow(0 8px 12px rgba(35, 48, 28, .2)); }
 .bottle--4 { height: 11em; } .bottle--8 { height: 13.5em; } .bottle--16 { height: 16.5em; }
-.bottle--32 { height: 20em; } .bottle--spray { height: 22em; } .bottle--gal { height: 22em; }
-.bottle--hero { height: clamp(300px, 46vw, 460px); margin-inline: auto; }
+.bottle--32 { height: 16em; } .bottle--spray { height: 22em; } .bottle--gal { height: 21em; }
+.bottle--hero { height: clamp(260px, 38vw, 400px); margin-inline: auto; }
+.size-art[hidden] { display: none; }
+.size-art { animation: art-in .35s ease both; }
+@keyframes art-in { from { opacity: 0; transform: translateY(6px); } }
+@media (prefers-reduced-motion: reduce) { .size-art { animation: none; } }
 .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .chips li, .chip { display: inline-flex; align-items: center; min-height: 40px; padding: 6px 16px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--bg); font-weight: 600; color: var(--heading); font-size: .95rem; }
 button.chip { min-height: 44px; font: inherit; font-weight: 600; cursor: pointer; transition: background-color .2s, color .2s; }

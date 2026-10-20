@@ -161,12 +161,15 @@
     var price = picker.querySelector('[data-price]');
     var sizeName = picker.querySelector('[data-size-name]');
     var buy = picker.querySelector('[data-buy]');
+    var scope = picker.closest('.product') || doc;
+    var arts = scope.querySelectorAll('[data-size-art]');
     var sync = function () {
       var chosen = picker.querySelector('input[name="size"]:checked');
       if (!chosen) return;
       if (price) price.textContent = chosen.getAttribute('data-price');
       if (sizeName) sizeName.textContent = chosen.value;
       if (buy) buy.setAttribute('href', chosen.getAttribute('data-checkout'));
+      for (var i = 0; i < arts.length; i++) arts[i].hidden = arts[i].getAttribute('data-size-art') !== chosen.value;
     };
     picker.addEventListener('change', sync);
     sync();
