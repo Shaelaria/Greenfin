@@ -55,7 +55,6 @@
       "url": "https://www.greenfinamendments.com/",
       "image": "https://www.greenfinamendments.com/assets/img/greenfin-logo.png",
       "email": "sales@greenfinamendments.com",
-      "telephone": "[[PHONE]]",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "1401 Olive Road",
@@ -119,42 +118,40 @@
     <h2 id="posts-title" class="visually-hidden">Articles</h2>
     <!--
       HOW TO ADD A POST
-      1. Copy contact.html or privacy.html to /journal/your-post-slug.html and write the article inside <main>.
-         (If you use a subfolder, prefix asset and page links with ../)
-      2. Copy one <article class="card post-card"> below, update the title, date, excerpt and image comment,
-         and wrap the <h3> text in <a class="card__link" href="journal/your-post-slug.html">…</a>.
-      3. Remove the "Draft" tag, add the new URL to sitemap.xml, and keep newest posts first.
+      1. Copy one of the journal-*.html files to journal-your-post-slug.html and replace the article text.
+      2. Copy one <article class="card post-card"> below, update the title, link, date, excerpt and image comment.
+      3. Add the new URL to sitemap.xml and keep the newest posts first.
     -->
     <div class="grid grid--3">
-      <article class="card post-card">
+      <article class="card card--link post-card">
         <figure class="ph ph--soil" style="margin:-8px -8px 18px">
           <!-- replace with photography: close-up of hands holding dark living soil with fine white roots -->
           <div class="ph__frame" style="--ratio:16/10" role="img" aria-label="Hands holding dark, living soil"><svg class="flourish flourish--br" aria-hidden="true" focusable="false"><use href="#flourish"/></svg><span class="ph__emblem"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-soil"/></svg></span></div>
         </figure>
-        <span class="tag tag--gold">Draft · coming soon</span>
-        <h3>Amendment vs fertilizer: what your soil actually needs</h3>
+        <span class="tag tag--gold">October 20, 2026</span>
+        <h3><a class="card__link" href="journal-amendment-vs-fertilizer.html">Amendment vs fertilizer: what your soil actually needs</a></h3>
         <p>Fertilizers feed the plant. Amendments feed the soil that feeds the plant. Here's how to tell which one your beds are asking for.</p>
-        <p class="meta">The science · 6 min read</p>
+        <p class="meta">The science · 4 min read</p>
       </article>
-      <article class="card post-card">
+      <article class="card card--link post-card">
         <figure class="ph" style="margin:-8px -8px 18px">
           <!-- replace with photography: a bubbling compost tea brewer in a sunny garden -->
           <div class="ph__frame" style="--ratio:16/10" role="img" aria-label="A compost tea brewing in a bucket"><svg class="flourish flourish--tl" aria-hidden="true" focusable="false"><use href="#flourish"/></svg><span class="ph__emblem"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-drop"/></svg></span></div>
         </figure>
-        <span class="tag tag--gold">Draft · coming soon</span>
-        <h3>How to brew a living compost tea</h3>
-        <p>A bucket, an air pump and a splash of living microbes. Our simple method for a brew that's full of life, not just nutrients.</p>
-        <p class="meta">Using it · 5 min read</p>
+        <span class="tag tag--gold">October 20, 2026</span>
+        <h3><a class="card__link" href="journal-living-compost-tea.html">How to brew a living compost tea</a></h3>
+        <p>A bucket, an air pump and a splash of living microbes. A simple method for a brew that's full of life, not just nutrients.</p>
+        <p class="meta">Using it · 4 min read</p>
       </article>
-      <article class="card post-card">
+      <article class="card card--link post-card">
         <figure class="ph ph--water" style="margin:-8px -8px 18px">
           <!-- replace with photography: fish tanks and deep water culture beds side by side in the greenhouse -->
           <div class="ph__frame" style="--ratio:16/10" role="img" aria-label="Fish tanks and plant beds inside the Greenfin greenhouse"><svg class="flourish flourish--tr" aria-hidden="true" focusable="false"><use href="#flourish"/></svg><span class="ph__emblem"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fish"/></svg></span></div>
         </figure>
-        <span class="tag tag--gold">Draft · coming soon</span>
-        <h3>Inside our decoupled aquaponics greenhouse</h3>
+        <span class="tag tag--gold">October 20, 2026</span>
+        <h3><a class="card__link" href="journal-inside-our-greenhouse.html">Inside our decoupled aquaponics greenhouse</a></h3>
         <p>Two loops, three growing methods and one very useful byproduct. A walk through the system that makes Greenfin.</p>
-        <p class="meta">Our story · 7 min read</p>
+        <p class="meta">Our story · 4 min read</p>
       </article>
     </div>
     <p class="center meta" style="margin-top:40px">Want new posts in your inbox? Sign up for the Greenfin letter below.</p>
@@ -200,8 +197,9 @@
       <div class="footer-signup">
         <h2>Grow with us</h2>
         <p>Tips, seasonal rates and offers. A few emails a season, never more.</p>
-        <!-- Replace [[EMAIL LIST ENDPOINT]] with your Mailchimp, Klaviyo, Formspree or Netlify Forms URL. -->
-        <form class="signup" action="[[EMAIL LIST ENDPOINT]]" method="post" data-validate>
+        <!-- Sign-ups go to Netlify Forms ("newsletter"); export them to your email tool from the Netlify dashboard. -->
+        <form class="signup" name="newsletter" action="thanks.html" method="post" data-netlify="true" data-validate>
+          <input type="hidden" name="form-name" value="newsletter">
           <label class="label" for="footer-email">Email address</label>
           <div class="signup__row">
             <input id="footer-email" name="email" type="email" autocomplete="email" required aria-describedby="footer-email-error">
@@ -214,14 +212,8 @@
     </div>
     <div class="footer-contact">
       <address>Green Fin Amendments LLC · 1401 Olive Road, New Haven, Missouri 63068</address>
-      <p style="margin:0"><a href="mailto:sales@greenfinamendments.com">sales@greenfinamendments.com</a> · <a href="mailto:info@greenfinamendments.com">info@greenfinamendments.com</a> · Phone <span class="placeholder">[[PHONE]]</span></p>
+      <p style="margin:0"><a href="mailto:sales@greenfinamendments.com">sales@greenfinamendments.com</a> · <a href="mailto:info@greenfinamendments.com">info@greenfinamendments.com</a></p>
     </div>
-    <!-- [[SOCIAL LINKS]]: replace each # with the real profile URL. -->
-    <ul class="socials" aria-label="Greenfin on social media">
-      <li><a href="#" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-instagram"/></svg> Instagram</a></li>
-      <li><a href="#" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg> Facebook</a></li>
-      <li><a href="#" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-youtube"/></svg> YouTube</a></li>
-    </ul>
     <div class="footer-bottom">
       <p>© <span data-year>2026</span> Green Fin Amendments LLC. All rights reserved.</p>
       <p>Life in a Bottle™ is a trademark of Green Fin Amendments LLC.</p>

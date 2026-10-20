@@ -55,7 +55,6 @@
       "url": "https://www.greenfinamendments.com/",
       "image": "https://www.greenfinamendments.com/assets/img/greenfin-logo.png",
       "email": "sales@greenfinamendments.com",
-      "telephone": "[[PHONE]]",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "1401 Olive Road",
@@ -232,7 +231,7 @@
       <article class="card" id="community">
         <span class="ring ring--sm"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-people"/></svg></span>
         <h3>Community partnerships</h3>
-        <p>We work with local organizations to protect habitat and regional biodiversity along the Missouri River and in the Ozark foothills. <!-- [[PARTNER NAMES]]: list local partner organizations here if you want to name them. --></p>
+        <p>We work with local organizations to protect habitat and regional biodiversity along the Missouri River and in the Ozark foothills.</p>
       </article>
     </div>
   </div>
@@ -289,8 +288,9 @@
       <div class="footer-signup">
         <h2>Grow with us</h2>
         <p>Tips, seasonal rates and offers. A few emails a season, never more.</p>
-        <!-- Replace [[EMAIL LIST ENDPOINT]] with your Mailchimp, Klaviyo, Formspree or Netlify Forms URL. -->
-        <form class="signup" action="[[EMAIL LIST ENDPOINT]]" method="post" data-validate>
+        <!-- Sign-ups go to Netlify Forms ("newsletter"); export them to your email tool from the Netlify dashboard. -->
+        <form class="signup" name="newsletter" action="thanks.html" method="post" data-netlify="true" data-validate>
+          <input type="hidden" name="form-name" value="newsletter">
           <label class="label" for="footer-email">Email address</label>
           <div class="signup__row">
             <input id="footer-email" name="email" type="email" autocomplete="email" required aria-describedby="footer-email-error">
@@ -303,14 +303,8 @@
     </div>
     <div class="footer-contact">
       <address>Green Fin Amendments LLC · 1401 Olive Road, New Haven, Missouri 63068</address>
-      <p style="margin:0"><a href="mailto:sales@greenfinamendments.com">sales@greenfinamendments.com</a> · <a href="mailto:info@greenfinamendments.com">info@greenfinamendments.com</a> · Phone <span class="placeholder">[[PHONE]]</span></p>
+      <p style="margin:0"><a href="mailto:sales@greenfinamendments.com">sales@greenfinamendments.com</a> · <a href="mailto:info@greenfinamendments.com">info@greenfinamendments.com</a></p>
     </div>
-    <!-- [[SOCIAL LINKS]]: replace each # with the real profile URL. -->
-    <ul class="socials" aria-label="Greenfin on social media">
-      <li><a href="#" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-instagram"/></svg> Instagram</a></li>
-      <li><a href="#" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg> Facebook</a></li>
-      <li><a href="#" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-youtube"/></svg> YouTube</a></li>
-    </ul>
     <div class="footer-bottom">
       <p>© <span data-year>2026</span> Green Fin Amendments LLC. All rights reserved.</p>
       <p>Life in a Bottle™ is a trademark of Green Fin Amendments LLC.</p>

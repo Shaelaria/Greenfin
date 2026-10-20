@@ -55,7 +55,6 @@
       "url": "https://www.greenfinamendments.com/",
       "image": "https://www.greenfinamendments.com/assets/img/greenfin-logo.png",
       "email": "sales@greenfinamendments.com",
-      "telephone": "[[PHONE]]",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "1401 Olive Road",
@@ -196,16 +195,15 @@
       <div class="divider" aria-hidden="true"><span></span></div>
       <p>Soil and plant testing for Greenfin was carried out by the University of Missouri Soil &amp; Plant Testing Lab. The full lab report is available on request.</p>
     </div>
-    <!-- Replace each [[TEST NAME]] / [[TEST RESULT]] with figures from the University of Missouri lab report. Do not publish numbers that are not in the report. -->
-    <div class="grid grid--3">
-      <article class="card card--center"><span class="ring ring--sm"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-flask"/></svg></span><span class="tag tag--gold" style="align-self:center">Lab result</span><h3><span class="placeholder">[[TEST NAME]]</span></h3><p class="price" style="font-size:1.6rem"><span class="placeholder">[[TEST RESULT]]</span></p><p><span class="placeholder">[[WHAT IT MEANS]]</span></p></article>
-      <article class="card card--center"><span class="ring ring--sm"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-soil"/></svg></span><span class="tag tag--gold" style="align-self:center">Lab result</span><h3><span class="placeholder">[[TEST NAME]]</span></h3><p class="price" style="font-size:1.6rem"><span class="placeholder">[[TEST RESULT]]</span></p><p><span class="placeholder">[[WHAT IT MEANS]]</span></p></article>
-      <article class="card card--center"><span class="ring ring--sm"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-leaf"/></svg></span><span class="tag tag--gold" style="align-self:center">Lab result</span><h3><span class="placeholder">[[TEST NAME]]</span></h3><p class="price" style="font-size:1.6rem"><span class="placeholder">[[TEST RESULT]]</span></p><p><span class="placeholder">[[WHAT IT MEANS]]</span></p></article>
-    </div>
+    <div class="panel center" style="max-width:760px;margin-inline:auto">
+      <span class="ring" style="margin:0 auto 18px"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-flask"/></svg></span>
+      <h3>Read the full lab report</h3>
+      <p>The report covers the soil and plant testing the University of Missouri Soil &amp; Plant Testing Lab ran on Greenfin. Ask for a copy and we'll send it to you.</p>
     <div class="actions" style="justify-content:center">
       <a class="btn btn--primary" href="mailto:info@greenfinamendments.com?subject=Request%3A%20Greenfin%20lab%20report"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Request the full report</a>
     </div>
-    <p class="meta center" style="margin-top:14px">We'll email the University of Missouri report to you from info@greenfinamendments.com.</p>
+      <p class="meta" style="margin-top:14px">Or write to info@greenfinamendments.com.</p>
+    </div>
   </div>
 </section>
 </main>
@@ -248,8 +246,9 @@
       <div class="footer-signup">
         <h2>Grow with us</h2>
         <p>Tips, seasonal rates and offers. A few emails a season, never more.</p>
-        <!-- Replace [[EMAIL LIST ENDPOINT]] with your Mailchimp, Klaviyo, Formspree or Netlify Forms URL. -->
-        <form class="signup" action="[[EMAIL LIST ENDPOINT]]" method="post" data-validate>
+        <!-- Sign-ups go to Netlify Forms ("newsletter"); export them to your email tool from the Netlify dashboard. -->
+        <form class="signup" name="newsletter" action="thanks.html" method="post" data-netlify="true" data-validate>
+          <input type="hidden" name="form-name" value="newsletter">
           <label class="label" for="footer-email">Email address</label>
           <div class="signup__row">
             <input id="footer-email" name="email" type="email" autocomplete="email" required aria-describedby="footer-email-error">
@@ -262,14 +261,8 @@
     </div>
     <div class="footer-contact">
       <address>Green Fin Amendments LLC · 1401 Olive Road, New Haven, Missouri 63068</address>
-      <p style="margin:0"><a href="mailto:sales@greenfinamendments.com">sales@greenfinamendments.com</a> · <a href="mailto:info@greenfinamendments.com">info@greenfinamendments.com</a> · Phone <span class="placeholder">[[PHONE]]</span></p>
+      <p style="margin:0"><a href="mailto:sales@greenfinamendments.com">sales@greenfinamendments.com</a> · <a href="mailto:info@greenfinamendments.com">info@greenfinamendments.com</a></p>
     </div>
-    <!-- [[SOCIAL LINKS]]: replace each # with the real profile URL. -->
-    <ul class="socials" aria-label="Greenfin on social media">
-      <li><a href="#" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-instagram"/></svg> Instagram</a></li>
-      <li><a href="#" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg> Facebook</a></li>
-      <li><a href="#" rel="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-youtube"/></svg> YouTube</a></li>
-    </ul>
     <div class="footer-bottom">
       <p>© <span data-year>2026</span> Green Fin Amendments LLC. All rights reserved.</p>
       <p>Life in a Bottle™ is a trademark of Green Fin Amendments LLC.</p>

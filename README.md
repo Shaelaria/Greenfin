@@ -13,18 +13,25 @@ Upload the contents of this repository to the web root of any static host:
 
 Then point `www.greenfinamendments.com` at the host.
 
-## Before going live
+## Forms
 
-Search the files for `[[` to find every placeholder that still needs real content:
+The contact, wholesale and newsletter forms use [Netlify Forms](https://docs.netlify.com/forms/setup/). On Netlify they work as soon as the site is deployed: submissions appear in the Netlify dashboard under **Forms**, and you can turn on email notifications there. After sending, visitors land on `thanks.html`.
 
-- `[[PRICE]]` and `[[CHECKOUT URL]]`, set once per size on `products.html`.
-- `[[FORM ENDPOINT]]` on the contact and wholesale forms.
-- `[[EMAIL LIST ENDPOINT]]` on the newsletter signup, both on the home page and in the footer.
-- `[[PHONE]]`
-- The social links, which point to `#`.
-- `[[TEST NAME]]`, `[[TEST RESULT]]` and `[[WHAT IT MEANS]]` on `how-to-use.html`.
-- `[[POLICY DATE]]` and `[[PARTNER NAMES]]`.
-- Photography placeholders. Each one has an HTML comment describing the photo to use.
+On a host other than Netlify, change each form's `action` to a form service such as Formspree, and remove the `data-netlify` and `netlify-honeypot` attributes.
+
+## Ordering
+
+Ordering currently works by email. Each size on `products.html` opens an email to sales@greenfinamendments.com with the size filled in. To switch to online checkout, replace the `data-checkout` link on each size with a Shopify, Square or Stripe payment link. Adding a `data-price` attribute to each size shows the price on the page.
+
+## Still to add
+
+The site works without these, but they'll make it better:
+
+- Prices per size, and online checkout links (see Ordering).
+- Instagram, Facebook and YouTube links for the footer.
+- Lab report figures for the test results section of `how-to-use.html`.
+- Names of the partner organizations on `our-story.html`.
+- Real photos. The illustrated stand-ins each have an HTML comment describing the photo to use.
 
 ## Editing
 
